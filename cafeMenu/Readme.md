@@ -1,0 +1,1 @@
+<img src="./cafeMenu-screenshot.png" alt="Cafe Menu" width="100%" height="500" style="object-fit:cover"/>
