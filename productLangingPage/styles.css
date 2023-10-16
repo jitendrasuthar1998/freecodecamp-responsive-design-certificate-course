@@ -1,0 +1,393 @@
+@import "https://fonts.googleapis.com/css?family=Lato:400,700";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* setting background color of whole web page to #eee and text font family to Lato and also added a fallback font */
+
+body {
+  background-color: #eee;
+  font-family: "Lato", sans-serif;
+}
+
+/* setting page-wrapper position to relative */
+
+#page-wrapper {
+  position: relative;
+}
+
+/* removing bullet points from list item of unordered list and ordered list  */
+
+li {
+  list-style: none;
+}
+
+/* removing default blue color of link text and changing link text color to black and also removing default underline below text */
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+/* global class styling */
+
+/* give container div max-width of 1100px means if device width is greater than 1100px that time it will only take 1100px width and center it horizontally */
+/* give container width of 100% of device whose width is equal to 1100px or less than that */
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* styling button */
+
+/* adding left and right padding or space at left and right side between border and text of button */
+/* setting up button height to 40px */
+/* setting up font size means text size to 1em */
+/* setting up font weight to 900, font weight means how darker font text should look like */
+/* setting button background color to transparent */
+/* giving button a border at all 4 side of 3px solid black  */
+/* giving button border radius of 2px at all 4 sides */
+/* change cursor to pointer, it will show a pointer when user hover on it */
+
+.btn {
+  padding: 0 20px;
+  height: 40px;
+  font-size: 1em;
+  font-weight: 900;
+  background: transparent;
+  text-transform: uppercase;
+  border: 3px solid black;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+/* setting grid class div display property to flex */
+.grid {
+  display: flex;
+}
+
+/* fix header to the page. if user scroll down, that time header will be fixed to the screen at top */
+
+header {
+  position: fixed;
+  top: 0;
+  min-height: 75px;
+  padding: 0px 20px;
+  background-color: #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* wrap header content when device width is 600px or less than that */
+@media only screen and (max-width: 600px) {
+  header {
+    flex-wrap: wrap;
+  }
+}
+
+/* give logo class div width of 65vw */
+
+.logo {
+  width: 65vw;
+}
+
+/* if device width is 650px or less than that, that time give logo class div width of 100%, means take full available device width */
+
+@media only screen and (max-width: 650px) {
+  .logo {
+    margin-top: 15px;
+    width: 100%;
+    position: relative;
+  }
+}
+
+/* setting up img style which is inside of logo class div */
+/* give img width and height of 100%, when giving width 100%, we also need to give max-width, because if screen width is large, that time it will take whole space and the content or image will not look good */
+/* so that's why give img max-width of 300px, means in larger screen device, img width can be 300px */
+/* move img from left side to right side, so that's why give margin-left of 20px */
+/* to align img center, give img display property "flex", and justify-content and align-items "center" and also text-align "center" */
+
+.logo > img {
+  width: 100%;
+  height: 100%;
+  max-width: 300px;
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* center logo class div when device width is 650px or less than that */
+@media only screen and (max-width: 650px) {
+  .logo > img {
+    margin: 0 auto;
+  }
+}
+
+nav {
+  font-weight: 400;
+}
+
+/* in small screen device, move navbar content below to logo  */
+@media only screen and (max-width: 650px) {
+  nav {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 50px;
+  }
+
+  nav li {
+    margin-bottom: 5px;
+  }
+}
+
+/* give unordered list width of 35vw */
+nav > ul {
+  width: 35vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+@media only screen and (max-width: 650px) {
+  nav > ul {
+    flex-direction: column;
+  }
+}
+
+/* setting hero id div height of 200px, display property flex, justify-content and align-items "center" and flex-direction "column", because we want to center the content of hero div or want to center h3, input field and button */
+#hero {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* adding some space between hero h2 and the content below it */
+
+#hero > h2 {
+  margin-bottom: 20px;
+  word-wrap: break-word;
+}
+
+/* setting style using type selector */
+/* give max-width of 275px and width of 100% to the input whose type is "email" */
+#hero input[type="email"] {
+  max-width: 275px;
+  width: 100%;
+  padding: 5px;
+}
+
+/* give max-width = 150px, width = 100%, height = 30px, top and bottom margin of 15px, and remove border, and set background color to "#f1c40f" to the input whose type is "submit" */
+
+#hero input[type="submit"] {
+  max-width: 150px;
+  width: 100%;
+  height: 30px;
+  margin: 15px 0;
+  border: 0;
+  background-color: #f1c40f;
+}
+
+/* change background color of input type submit when user hover on it */
+
+#hero input[type="submit"]:hover {
+  background-color: orange;
+
+  /* adding transition effect in background color */
+  /* change background color slowly */
+  transition: background-color 1s;
+}
+
+/* in small screen device, if we don't add some extra space at upperside between hero div content and body, that time our logo and nav class div content will overlape it  */
+@media only screen and (max-width: 650px) {
+  #hero {
+    margin-top: 150px;
+  }
+}
+
+/* add some space between hero and features id divs */
+
+#features {
+  margin-top: 10px;
+}
+
+/* styling icon class div */
+/* give icon class div width of 20vw, and center its content and give height of 125px and text color of darkorange */
+
+#features .icon {
+  width: 20vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 125px;
+  color: darkorange;
+}
+
+/* in small screen device, change flex direction to column of features id div's grid class child divs and center its content */
+
+@media only screen and (max-width: 550px) {
+  #features .grid {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* giving 80vw to desc class div, and center its content*/
+
+#features .desc {
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 125px;
+  padding: 5px;
+}
+
+/* in small screen devices, give desc class div width of 100% and center its content */
+@media only screen and (max-width: 550px) {
+  #features .desc {
+    width: 100%;
+    text-align: center;
+    padding: 0 5px;
+    height: 100px;
+  }
+
+  #features .icon {
+    height: 100px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  #features {
+    margin-top: 0;
+  }
+}
+
+/* styling how-it-works id div */
+/* adding some space between #features id div and #how-it-works id div and centering its content */
+#how-it-works {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+/* giving #how-it-works' iframe element width of 100% and max-width of 560px */
+#how-it-works > iframe {
+  width: 100%;
+  max-width: 560px;
+}
+
+/* add some space between #how-it-works and #pricing id divs and center its content */
+
+#pricing {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/* styling product class divs */
+/* center the content inside of it */
+/* give each product class div equal width, for that using calc(100%/3) method. */
+/* add some space around product class div of 10px */
+/* give a border of 1px solid black */
+/* and also round the corners of product class div */
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: calc(100% / 3);
+  margin: 10px;
+  border: 1px solid #000;
+  border-radius: 3px;
+}
+
+/* styling level class child div of product class div  */
+
+.product > .level {
+  background-color: #ddd;
+  color: black;
+  padding: 15px 0;
+  text-transform: uppercase;
+  width: 100%;
+  font-weight: 700;
+}
+
+.product > h2 {
+  margin-top: 15px;
+}
+
+.product > ol {
+  margin: 15px 0;
+}
+
+.product > ol > li {
+  padding: 5px 0;
+}
+
+.product > button {
+  border: 0;
+  background-color: #f1c40f;
+  margin: 15px 0;
+  font-weight: 400;
+}
+
+.product > button:hover {
+  background-color: orange;
+  transition: background-color 1s;
+}
+
+@media only screen and (max-width: 800px) {
+  #pricing {
+    flex-direction: column;
+  }
+
+  .product {
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+}
+
+footer {
+  margin-top: 30px;
+  background-color: #ddd;
+  padding: 20px;
+}
+
+footer > ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+footer > ul > li {
+  padding: 0 10px;
+}
+
+footer > span {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.9em;
+  color: #444;
+}
